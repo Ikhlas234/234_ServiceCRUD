@@ -86,4 +86,9 @@ app.delete('/biodata/:id', (req, res) => {
                 });
             }
 
-          
+            res.json({
+                message: "Data berhasil dihapus",
+                data: result.rows[0]
+            });
+        })
+       
