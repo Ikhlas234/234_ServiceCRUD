@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
             console.error(err);
             // Sementara pakai err.message supaya penyebab error terlihat di browser.
             // Kalau sudah beres, ganti lagi jadi 'Internal Server Error'.
-            res.status(500).send(err.message);
+            res.status(500).send('Internal Server Error');
         });
 });
 
@@ -43,7 +43,7 @@ app.post('/biodata', (req, res) => {
         .then(result => res.status(201).json(result.rows[0]))
         .catch(err => {
             console.error(err);
-            res.status(500).send(err.message);
+            res.status(500).send('Internal Server Error');
         });
 });
 
@@ -70,7 +70,7 @@ app.put('/biodata/:id', (req, res) => {
         })
         .catch(err => {
             console.error(err);
-            res.status(500).send(err.message);
+            res.status(500).send('Internal Server Error');
         });
 });
 
@@ -96,7 +96,7 @@ app.delete('/biodata/:id', (req, res) => {
         })
         .catch(err => {
             console.error(err);
-            res.status(500).send(err.message);
+            res.status(500).send('Internal Server Error');
         });
 });
 
